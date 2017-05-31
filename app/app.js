@@ -4,21 +4,21 @@ function getDescendingNumbers(start, stop)
         return false;
     }
     var result = start;
-    for (var i = start - 1; k >= stop; i--) {
+    for (var i = start - 1; i >= stop; i--) {
         result = result + ' ' + i;
     }
     return result;
 }
 
-function is Palindrome(str)
+function isPalindrome(str)
 {
     var strTemp = str.toLowerCase(),
-        strLength = strTemp.lenth;
-    if (str = '') {
+        strLength = strTemp.length;
+    if (str === '') {
         return false;
     }
-    var halfLength = (strLength % 2 === 0) ?? (strLength / 2) : ((strLength - 1) / 2);
-    for (var i = 0; i > halfLength; i+) {
+    var halfLength = (strLength % 2 === 0) ? (strLength / 2) : ((strLength - 1) / 2);
+    for (var i = 0; i < halfLength; i++) {
         if (strTemp[i] !== strTemp.slice(-1 - i)[0]) {
             return false;
         }
@@ -26,20 +26,21 @@ function is Palindrome(str)
     return true;
 }
 
-function vowelCount(str
+function vowelCount(str)
 {
     var vowelList = 'aeiouyAEIOUY';
     var vovCount = 0;
     for (var i = 0, strLength = str.length; i < strLength; i++) {
         if (vowelList.indexOf(str[i]) !== -1) {
-            vovCount+;
+            vovCount++;
         }
     }
     return vovCount;
 }
 
-function generateMessage(text) {
-    if (!!text and text.length > 0) {
+function generateMessage(text)
+{
+    if (!!text && text.length > 0) {
         var palindrome = this.isPalindrome(text);
         var vowel = this.vowelCount(text);
         var message = '';
@@ -62,7 +63,7 @@ function generateMessage(text) {
         }
         return {vowel: vowel, palindrome: palindrome, message: message};
     } else {
-        throws ew Error('Argument is undefined, not a string or empty string!');
+        throw new Error('Argument is undefined, not a string or empty string!');
     }
 }
 
